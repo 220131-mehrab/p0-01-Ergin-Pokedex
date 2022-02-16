@@ -16,11 +16,16 @@ public class DexService extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        //super.doGet(req, resp);
-        //
-        // dexRepository.getPocketMonsters()
-        for (String pokemon : dexRepository.getPocketMonsters()){
-            resp.getWriter().println(pokemon);
+        String userInput;
+        userInput = req.getParameter("searchName");
+        if (userInput!=null){
+            String result = dexRepository.getPokemon(userInput);
+            resp.getWriter().println(result);
+        } else {
+
+            for (String pokemon : dexRepository.getPocketMonsters()) {
+                resp.getWriter().println(pokemon);
+            }
         }
     }
 }

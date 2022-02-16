@@ -8,14 +8,14 @@ public class App {
         //File fileSource = new File("pokedex.csv");
         DexRepository dexRepository = new DexRepository("pokedex.csv");
         DexService dexService = new DexService(dexRepository);
-        //
-        // DexServer dexServer = new DexServer(dexService);
+        SearchFormService sfService = new SearchFormService();
 
         Tomcat server = new Tomcat();
         server.setBaseDir(System.getProperty("java.io.tmpdir"));
         server.getConnector();
         server.addContext("" ,null);
-        server.addServlet("","dexServlet",dexService).addMapping("/");
+        server.addServlet("","dexServlet",dexService).addMapping("/pokemon");
+        server.addServlet("","searchFormServlet",sfService).addMapping("/search");
         try {
             server.start();
         } catch (LifecycleException e) {
