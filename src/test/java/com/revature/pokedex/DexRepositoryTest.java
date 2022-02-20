@@ -5,8 +5,8 @@ import org.junit.jupiter.api.Test;
 
 public class DexRepositoryTest {
     @Test
-    public void getPokemonTest(){
-        DexRepository testRepo = new DexRepository("pokedextest.csv");
+    public void getCSVPokemonTest(){
+        CSVDexRepository testRepo = new CSVDexRepository("pokedextest.csv");
         Pokemon actual = testRepo.getPokemon("Bulbasaur");
         Pokemon expected = new Pokemon("Bulbasaur");
         Assertions.assertEquals(expected.getName() , actual.getName() );
