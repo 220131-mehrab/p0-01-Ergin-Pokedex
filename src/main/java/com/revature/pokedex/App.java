@@ -1,5 +1,10 @@
 package com.revature.pokedex;
 
+import com.revature.pokedex.repository.DexRepository;
+import com.revature.pokedex.repository.InMemoryDexRepository;
+import com.revature.pokedex.servlet.DefaultServlet;
+import com.revature.pokedex.servlet.DexService;
+import com.revature.pokedex.servlet.SearchFormService;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 

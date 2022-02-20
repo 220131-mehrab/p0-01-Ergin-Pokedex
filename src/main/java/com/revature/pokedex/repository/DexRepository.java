@@ -1,4 +1,6 @@
-package com.revature.pokedex;
+package com.revature.pokedex.repository;
+
+import com.revature.pokedex.domain.Pokemon;
 
 import java.util.List;
 

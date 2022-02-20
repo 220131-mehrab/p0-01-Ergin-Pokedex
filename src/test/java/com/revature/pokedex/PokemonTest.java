@@ -1,11 +1,10 @@
 package com.revature.pokedex;
 
+import com.revature.pokedex.domain.Pokemon;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 public class PokemonTest {

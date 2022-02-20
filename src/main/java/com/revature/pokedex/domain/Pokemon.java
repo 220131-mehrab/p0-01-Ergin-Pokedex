@@ -1,4 +1,4 @@
-package com.revature.pokedex;
+package com.revature.pokedex.domain;
 
 import java.util.Objects;
 

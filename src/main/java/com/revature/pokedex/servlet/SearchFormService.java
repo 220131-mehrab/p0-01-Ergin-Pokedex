@@ -1,4 +1,4 @@
-package com.revature.pokedex;
+package com.revature.pokedex.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;

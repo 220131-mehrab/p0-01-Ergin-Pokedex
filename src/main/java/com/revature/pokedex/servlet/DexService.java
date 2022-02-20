@@ -1,5 +1,7 @@
-package com.revature.pokedex;
+package com.revature.pokedex.servlet;
 
+import com.revature.pokedex.domain.Pokemon;
+import com.revature.pokedex.repository.DexRepository;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

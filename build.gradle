@@ -19,7 +19,9 @@ repositories {
 
 dependencies {
     //implementation 'org.code-house.bacnet4j:api:1.2.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
     implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.0-M10'
+    implementation 'com.h2database:h2:2.1.210'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 }

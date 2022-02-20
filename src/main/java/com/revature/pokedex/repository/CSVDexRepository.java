@@ -1,7 +1,9 @@
-package com.revature.pokedex;
+package com.revature.pokedex.repository;
 
 //import java.io.File;
 //import java.io.FileNotFoundException;
+import com.revature.pokedex.domain.Pokemon;
+
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
