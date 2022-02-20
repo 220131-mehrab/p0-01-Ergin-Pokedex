@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DexRepository {
-    private List<String> pocketMonsters;// = new ArrayList<>();
+    private List<Pokemon> pocketMonsters;// = new ArrayList<>();
     //private File file;
     private InputStream file;
 
@@ -25,18 +25,20 @@ public class DexRepository {
         Scanner scanner = new Scanner(this.file,"UTF-8");
         scanner.useDelimiter("\n");
         while (scanner.hasNext()){
-            this.pocketMonsters.add(scanner.next());
-        }//try catch was deleted from here
+            String[] pokeColumns = scanner.next().split(",");
+            Pokemon temp = new Pokemon(pokeColumns[2]);
+            this.pocketMonsters.add(temp);
+        }
     }
 
-    public List<String> getPocketMonsters() {
+    public List<Pokemon> getPocketMonsters() {
         return pocketMonsters;
     }
 
-    public String getPokemon(String name){
-        String result = "";
-        for (String pokemon: this.pocketMonsters){
-            if (pokemon.contains(name)){
+    public Pokemon getPokemon(String name){
+        Pokemon result = null;
+        for (Pokemon pokemon: this.pocketMonsters){
+            if (pokemon.getName().equals(name)){
                 result = pokemon;
             }
         }

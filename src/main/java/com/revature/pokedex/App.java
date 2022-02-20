@@ -5,6 +5,7 @@ import org.apache.catalina.startup.Tomcat;
 
 public class App {
     public static void main (String[] args){
+        String webAppName = "pokedex";
         //File fileSource = new File("pokedex.csv");
         DexRepository dexRepository = new DexRepository("pokedex.csv");
         DexService dexService = new DexService(dexRepository);
@@ -12,10 +13,14 @@ public class App {
 
         Tomcat server = new Tomcat();
         server.setBaseDir(System.getProperty("java.io.tmpdir"));
+        server.setPort(0);
         server.getConnector();
-        server.addContext("" ,null);
-        server.addServlet("","dexServlet",dexService).addMapping("/pokemon");
-        server.addServlet("","searchFormServlet",sfService).addMapping("/search");
+        server.addContext(webAppName ,null);
+
+        server.addServlet(webAppName,"DefaultServlet", new DefaultServlet()).addMapping("/*");
+        server.addServlet(webAppName,"dexServlet",dexService).addMapping("/pokemon");
+        server.addServlet(webAppName,"searchFormServlet",sfService).addMapping("/search");
+        //System.out.println("Server running on http://localhost:" + server.getConnector().getPort());
         try {
             server.start();
         } catch (LifecycleException e) {

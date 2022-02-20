@@ -19,11 +19,11 @@ public class DexService extends HttpServlet {
         String userInput;
         userInput = req.getParameter("searchName");
         if (userInput!=null){
-            String result = dexRepository.getPokemon(userInput);
+            String result = dexRepository.getPokemon(userInput).getName();
             resp.getWriter().println(result);
         } else {
 
-            for (String pokemon : dexRepository.getPocketMonsters()) {
+            for (Pokemon pokemon : dexRepository.getPocketMonsters()) {
                 resp.getWriter().println(pokemon);
             }
         }

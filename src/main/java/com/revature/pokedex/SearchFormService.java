@@ -17,13 +17,13 @@ public class SearchFormService extends HttpServlet {
                 "</Head>\n" +
                 "<Body>\n" +
                 "    <h1>Pokedex Search</h1>" +
-                "    <form action='/pokemon'>\n" +
+                "    <form action='pokemon'>\n" +
                 "    " +
                 "    " +
                 "<input type='name' name='searchName'/>" +
                 "        \n" +
                 "        <input type='submit' value='Search'/>\n" +
-                "    <a href ='/pokemon'>See full Pokedex </a>\n" +
+                "    <a href ='pokemon'>See full Pokedex </a>\n" +
                 "    </form>\n" +
                 "</Body>\n" +
                 "</Html>";
